@@ -13,6 +13,17 @@ Dataset: [LGG MRI Segmentation](https://www.kaggle.com/datasets/mateuszbuda/lgg-
 
 ---
 
+## Dataset example
+
+Each sample is a pair: the axial **FLAIR MRI slice** and its **manually annotated mask**
+(the abnormality region). The overlay on the right shows the mask superimposed on the MRI.
+
+<p align="center">
+  <img src="assets/img/data_example.png" alt="Dataset example: MRI, mask and overlay" width="800">
+</p>
+
+---
+
 ## Notebook summary
 
 The notebook [`brain_mri_segmentation.ipynb`](brain_mri_segmentation.ipynb) covers the full
@@ -39,6 +50,17 @@ pipeline, from raw data to prediction:
 | Accuracy | 0.998 |
 | IoU | 0.835 |
 | Dice | 0.909 |
+
+---
+
+## Prediction example
+
+Qualitative comparison on the hold-out test set: the input **MRI**, the **ground-truth mask**
+and the **mask predicted** by the U-Net.
+
+<p align="center">
+  <img src="assets/img/pred_example.png" alt="Prediction example: MRI, ground-truth mask and predicted mask" width="800">
+</p>
 
 ---
 
@@ -124,7 +146,9 @@ brain-mri-segmentation/
 ├── brain_mri_segmentation.ipynb   # full notebook
 ├── assets/
 │   └── img/
-│       └── u_net.png              # U-Net architecture diagram
+│       ├── u_net.png              # U-Net architecture diagram
+│       ├── data_example.png       # Dataset example (MRI / mask / overlay)
+│       └── pred_example.png       # Prediction example (MRI / GT / prediction)
 └── README.md
 ```
 
