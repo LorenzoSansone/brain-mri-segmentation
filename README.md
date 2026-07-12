@@ -8,7 +8,7 @@ Dataset: [LGG MRI Segmentation](https://www.kaggle.com/datasets/mateuszbuda/lgg-
 (110 patients, **7858** image/mask pairs, TCIA / TCGA).
 
 <p align="center">
-  <img src="assets/img/u_net.png" alt="U-Net architecture" width="700">
+  <img src="assets/img/u_net.png" alt="U-Net architecture" width="600">
 </p>
 
 ---
@@ -19,7 +19,7 @@ Each sample is a pair: the axial **FLAIR MRI slice** and its **manually annotate
 (the abnormality region). The overlay on the right shows the mask superimposed on the MRI.
 
 <p align="center">
-  <img src="assets/img/data_example.png" alt="Dataset example: MRI, mask and overlay" width="800">
+  <img src="assets/img/data_example.png" alt="Dataset example: MRI, mask and overlay" width="600">
 </p>
 
 ---
@@ -59,7 +59,7 @@ Qualitative comparison on the hold-out test set: the input **MRI**, the **ground
 and the **mask predicted** by the U-Net.
 
 <p align="center">
-  <img src="assets/img/pred_example.png" alt="Prediction example: MRI, ground-truth mask and predicted mask" width="800">
+  <img src="assets/img/pred_example.png" alt="Prediction example: MRI, ground-truth mask and predicted mask" width="600">
 </p>
 
 ---
