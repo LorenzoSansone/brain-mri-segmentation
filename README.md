@@ -120,12 +120,12 @@ Run **all cells in order**, top to bottom:
 
 1. Library imports
 2. Global settings (splits and seeds)
-3. Section 1 — dataset download
-4. Section 2 — data preparation and generators
-5. Section 3 — metrics
-6. Section 4 — U-Net definition
-7. Section 5 — **training** (produces the `unet.keras` file)
-8. Sections 7–8 — evaluation and prediction
+3. Section 1: dataset download
+4. Section 2: data preparation and generators
+5. Section 3: metrics
+6. Section 4: U-Net definition
+7. Section 5: **training** (produces the `unet.keras` file)
+8. Sections 7–8: evaluation and prediction
 
 At the end you get the `unet.keras` weights file saved locally.
 ⚠️ Training (70 epochs) can take a long time without a GPU.
@@ -138,15 +138,15 @@ If you already have the `unet.keras` file, you can **skip training** and run
 
 1. Library imports
 2. Global settings (splits and seeds)
-3. Section 1 — dataset download
-4. Section 2.1 — locate the masks
-5. Section 2.2 — build the `DataFrame`
-6. Section 2.5 — train / val / test split
-7. Section 3 — metrics (needed to recompile the model)
-8. Section 6 — **Load model**: remove the triple quotes `"""` that comment out the cell,
+3. Section 1: dataset download
+4. Section 2.1: locate the masks
+5. Section 2.2: build the `DataFrame`
+6. Section 2.5: train / val / test split
+7. Section 3: metrics (needed to recompile the model)
+8. Section 6: **Load model**: remove the triple quotes `"""` that comment out the cell,
    set `model_path` to the path of your `unet.keras` and run it
-9. Section 7 — evaluation
-10. Section 8 — prediction
+9. Section 7: evaluation
+10. Section 8: prediction
 
 Example of loading weights (Section 6):
 
