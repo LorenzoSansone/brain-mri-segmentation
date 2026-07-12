@@ -33,8 +33,8 @@ pipeline, from raw data to prediction:
 |---|---------|---------|
 | 1 | **The dataset** | Download of the LGG dataset via `kagglehub` |
 | 2 | **Exploration & Preparation** | Pairing images/masks into a `DataFrame`, visualization (MRI + mask + overlay), train/val/test split and batch generators with data augmentation |
-| 3 | **Metrics** | Dice coefficient, Dice loss and IoU (Jaccard) — metrics robust to the tumor/background class imbalance |
-| 4 | **Model** | **U-Net** encoder–decoder architecture with skip connections (64→1024 filters), sigmoid output `256×256×1` |
+| 3 | **Metrics** | Dice coefficient, Dice loss and IoU (Jaccard); metrics robust to the tumor/background class imbalance |
+| 4 | **Model** | **U-Net** encoder–decoder architecture with skip connections, sigmoid output `256×256×1` |
 | 5 | **Training** | Training loop (70 epochs, batch 40, Adamax lr=0.001, Dice loss), `save_best_only` checkpoint to `unet.keras`, learning curves |
 | 6 | **Load model** *(optional)* | Reload the saved `unet.keras` weights without retraining |
 | 7 | **Evaluation** | Assessment on the hold-out test set |
@@ -74,6 +74,12 @@ and the **mask predicted** by the U-Net.
 pip install tensorflow numpy pandas opencv-python scikit-image scikit-learn matplotlib seaborn kagglehub
 ```
 
+> ℹ️ **On Kaggle these requirements are optional**: the Kaggle notebook environment
+> already ships with `tensorflow`/`keras`, `numpy`, `pandas`, `opencv-python`,
+> `scikit-image`, `scikit-learn`, `matplotlib`, `seaborn` and `kagglehub` preinstalled,
+> so you can run the notebook as-is without the `pip install` below. The list matters
+> only when running the notebook **outside** Kaggle (e.g. locally).
+
 > A **GPU** is strongly recommended for training. The notebook was built on Kaggle
 > (data paths look like `/kaggle/input/...`); `kagglehub.dataset_download(...)`
 > automatically downloads the dataset and returns the local path.
@@ -99,7 +105,7 @@ open, and collect the produced `unet.keras` from the version's output.
    ready to download.
 
 > 💡 A committed version runs **all cells in order**, so keep Section 6 (*Load model*)
-> commented out — otherwise it would try to reload weights that don't exist yet during
+> commented out, otherwise it would try to reload weights that don't exist yet during
 > a from-scratch run.
 
 > ⚠️ Kaggle enforces a max session time (currently ~12h with GPU). Training (70 epochs)
